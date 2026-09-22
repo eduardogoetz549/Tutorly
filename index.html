@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tutorly | Nachhilfe einfach finden</title>
+
+    <meta
+        name="description"
+        content="Finde passende Nachhilfelehrpersonen für Primar- und Oberstufe."
+    >
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#1f5eff">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="icons/icon-192.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="icons/icon-192.png"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container nav">
+
+        <a href="#" class="logo" data-page="home">
+            <span class="logo-icon">T</span>
+            <span>Tutorly</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <button data-page="home">Start</button>
+            <button data-page="search">Nachhilfe finden</button>
+            <button data-page="teachers">Lehrpersonen</button>
+            <button data-page="about">Über uns</button>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="btn btn-light" id="loginButton">
+                Anmelden
+            </button>
+
+            <button class="btn btn-primary" id="teacherSignupButton">
+                Nachhilfe anbieten
+            </button>
+        </div>
+
+        <button class="menu-button" id="menuButton">
+            ☰
+        </button>
+
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button data-page="home">Start</button>
+        <button data-page="search">Nachhilfe finden</button>
+        <button data-page="teachers">Lehrpersonen</button>
+        <button data-page="about">Über uns</button>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- STARTSEITE -->
+
+    <section id="home" class="page active">
+
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        Persönliche Nachhilfe
+                    </div>
+
+                    <h1>
+                        Lernen wird leichter mit der
+                        <span>richtigen Unterstützung.</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        Finde qualifizierte Nachhilfelehrpersonen,
+                        die zu deinem Fach, deiner Schulstufe und
+                        deinen Lernzielen passen.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button
+                            class="btn btn-primary btn-large"
+                            data-page="search"
+                        >
+                            Nachhilfe finden
+                        </button>
+
+                        <button
+                            class="btn btn-outline btn-large"
+                            id="heroTeacherButton"
+                        >
+                            Nachhilfe anbieten
+                        </button>
+                    </div>
+
+                    <div class="hero-features">
+                        <span>✓ Persönlich</span>
+                        <span>✓ Flexibel</span>
+                        <span>✓ Einfach buchen</span>
+                    </div>
+
+                </div>
+
+
+                <div class="search-card">
+
+                    <div class="search-card-top">
+                        <span class="small-label">
+                            SCHNELLSTART
+                        </span>
+
+                        <h2>
+                            Was möchtest du lernen?
+                        </h2>
+
+                        <p>
+                            Starte deine Suche nach einer passenden
+                            Lehrperson.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="homeSubject">Fach</label>
+
+                        <select id="homeSubject">
+                            <option value="">Alle Fächer</option>
+                            <option value="Deutsch">Deutsch</option>
+                            <option value="Mathematik">Mathematik</option>
+                            <option value="Italienisch">Italienisch</option>
+                            <option value="Englisch">Englisch</option>
+                            <option value="Französisch">Französisch</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="homeLevel">Schulstufe</label>
+
+                        <select id="homeLevel">
+                            <option value="">Alle Schulstufen</option>
+                            <option value="Primarstufe">
+                                Primarstufe
+                            </option>
+                            <option value="Oberstufe">
+                                Oberstufe
+                            </option>
+                        </select>
+                    </div>
+
+                    <button
+                        class="btn btn-primary btn-full"
+                        id="quickSearchButton"
+                    >
+                        Lehrpersonen anzeigen →
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="small-label">SO FUNKTIONIERT'S</span>
+                    <h2>In drei Schritten zur Nachhilfe</h2>
+                    <p>
+                        Schnell und unkompliziert die passende
+                        Unterstützung finden.
+                    </p>
+                </div>
+
+                <div class="steps">
+
+                    <article class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Suchen</h3>
+                        <p>
+                            Wähle Fach und Schulstufe und entdecke
+                            passende Lehrpersonen.
+                        </p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Vergleichen</h3>
+                        <p>
+                            Sieh dir Profile, Fächer, Preise und
+                            Erfahrungen an.
+                        </p>
+                    </article>
+
+                    <article class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Anfragen</h3>
+                        <p>
+                            Sende direkt eine unverbindliche
+                            Terminanfrage.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="section section-soft">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="small-label">
+                        BELIEBTE FÄCHER
+                    </span>
+
+                    <h2>Wobei brauchst du Unterstützung?</h2>
+                </div>
+
+                <div class="subject-grid">
+
+                    <button class="subject-card" data-subject="Mathematik">
+                        <span class="subject-icon">∑</span>
+                        <strong>Mathematik</strong>
+                        <small>Primar & Oberstufe</small>
+                    </button>
+
+                    <button class="subject-card" data-subject="Deutsch">
+                        <span class="subject-icon">Aa</span>
+                        <strong>Deutsch</strong>
+                        <small>Primar & Oberstufe</small>
+                    </button>
+
+                    <button class="subject-card" data-subject="Italienisch">
+                        <span class="subject-icon">IT</span>
+                        <strong>Italienisch</strong>
+                        <small>Sprachen lernen</small>
+                    </button>
+
+                    <button class="subject-card" data-subject="Englisch">
+                        <span class="subject-icon">EN</span>
+                        <strong>Englisch</strong>
+                        <small>Primar & Oberstufe</small>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+
+
+    <!-- SUCHE -->
+
+    <section id="search" class="page">
+
+        <div class="container page-content">
+
+            <div class="page-title">
+                <span class="small-label">NACHHILFE FINDEN</span>
+                <h1>Finde deine Lehrperson</h1>
+                <p>
+                    Filtere die Lehrpersonen nach deinen Bedürfnissen.
+                </p>
+            </div>
+
+
+            <div class="filters">
+
+                <div class="form-group">
+                    <label for="subjectFilter">Fach</label>
+
+                    <select id="subjectFilter">
+                        <option value="">Alle Fächer</option>
+                        <option value="Deutsch">Deutsch</option>
+                        <option value="Mathematik">Mathematik</option>
+                        <option value="Italienisch">Italienisch</option>
+                        <option value="Englisch">Englisch</option>
+                        <option value="Französisch">Französisch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="levelFilter">Schulstufe</label>
+
+                    <select id="levelFilter">
+                        <option value="">Alle Stufen</option>
+                        <option value="Primarstufe">Primarstufe</option>
+                        <option value="Oberstufe">Oberstufe</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="lessonFilter">Unterricht</label>
+
+                    <select id="lessonFilter">
+                        <option value="">Online & vor Ort</option>
+                        <option value="Online">Online</option>
+                        <option value="Vor Ort">Vor Ort</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="results-top">
+                <h2 id="resultCount">Lehrpersonen</h2>
+
+                <select id="sortFilter" class="sort-select">
+                    <option value="recommended">
+                        Empfohlen
+                    </option>
+                    <option value="price-low">
+                        Preis aufsteigend
+                    </option>
+                    <option value="rating">
+                        Beste Bewertung
+                    </option>
+                </select>
+            </div>
+
+            <div id="teacherList" class="teacher-list"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEHRPERSONEN -->
+
+    <section id="teachers" class="page">
+
+        <div class="container page-content">
+
+            <div class="page-title">
+                <span class="small-label">LEHRPERSONEN</span>
+                <h1>Unsere Nachhilfelehrpersonen</h1>
+                <p>
+                    Entdecke Lehrpersonen für unterschiedliche
+                    Fächer und Schulstufen.
+                </p>
+            </div>
+
+            <div id="allTeachers" class="teacher-list"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ÜBER UNS -->
+
+    <section id="about" class="page">
+
+        <div class="container page-content">
+
+            <div class="about-box">
+
+                <span class="small-label">UNSERE IDEE</span>
+
+                <h1>
+                    Gute Nachhilfe soll einfach zugänglich sein.
+                </h1>
+
+                <p>
+                    Tutorly verbindet Schülerinnen und Schüler mit
+                    passenden Nachhilfelehrpersonen. Unser Ziel ist
+                    eine übersichtliche Plattform, auf der
+                    Qualifikationen, Fächer, Preise und
+                    Verfügbarkeiten transparent dargestellt werden.
+                </p>
+
+                <p>
+                    Die Plattform befindet sich aktuell in der
+                    Entwicklung. Dieser Prototyp zeigt bereits, wie
+                    die spätere Suche und Buchung funktionieren kann.
+                </p>
+
+                <button
+                    class="btn btn-primary"
+                    data-page="search"
+                >
+                    Nachhilfe finden
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFIL -->
+
+    <section id="profile" class="page">
+
+        <div class="container page-content">
+            <button class="back-button" data-page="search">
+                ← Zurück zur Suche
+            </button>
+
+            <div id="profileContent"></div>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- BUCHUNGSFENSTER -->
+
+<div class="modal-overlay" id="bookingModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closeBooking">
+            ×
+        </button>
+
+        <span class="small-label">TERMINANFRAGE</span>
+
+        <h2 id="bookingTeacherName">
+            Lehrperson kontaktieren
+        </h2>
+
+        <p class="modal-intro">
+            Sende eine unverbindliche Anfrage.
+        </p>
+
+        <form id="bookingForm">
+
+            <input
+                type="hidden"
+                id="bookingTeacher"
+            >
+
+            <div class="form-group">
+                <label for="studentName">
+                    Dein Name
+                </label>
+
+                <input
+                    id="studentName"
+                    type="text"
+                    placeholder="Vorname Nachname"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="studentEmail">
+                    E-Mail
+                </label>
+
+                <input
+                    id="studentEmail"
+                    type="email"
+                    placeholder="name@beispiel.ch"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="bookingSubject">
+                    Fach
+                </label>
+
+                <select id="bookingSubject" required>
+                    <option value="">Fach auswählen</option>
+                    <option>Deutsch</option>
+                    <option>Mathematik</option>
+                    <option>Italienisch</option>
+                    <option>Englisch</option>
+                    <option>Französisch</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="bookingDate">
+                        Wunschdatum
+                    </label>
+
+                    <input
+                        id="bookingDate"
+                        type="date"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingTime">
+                        Uhrzeit
+                    </label>
+
+                    <input
+                        id="bookingTime"
+                        type="time"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="bookingMessage">
+                    Nachricht
+                </label>
+
+                <textarea
+                    id="bookingMessage"
+                    rows="4"
+                    placeholder="Wobei brauchst du Unterstützung?"
+                ></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-full"
+            >
+                Anfrage senden
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div class="modal-overlay" id="loginModal">
+
+    <div class="modal small-modal">
+
+        <button class="modal-close" id="closeLogin">
+            ×
+        </button>
+
+        <span class="small-label">ANMELDEN</span>
+
+        <h2>Willkommen zurück</h2>
+
+        <p class="modal-intro">
+            Der Login wird in einer späteren Version mit der
+            Datenbank verbunden.
+        </p>
+
+        <div class="form-group">
+            <label>E-Mail</label>
+            <input type="email" placeholder="name@beispiel.ch">
+        </div>
+
+        <div class="form-group">
+            <label>Passwort</label>
+            <input type="password" placeholder="••••••••">
+        </div>
+
+        <button
+            class="btn btn-primary btn-full"
+            id="demoLoginButton"
+        >
+            Anmelden
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- LEHRPERSON REGISTRIEREN -->
+
+<div class="modal-overlay" id="teacherModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closeTeacherModal">
+            ×
+        </button>
+
+        <span class="small-label">
+            LEHRPERSON WERDEN
+        </span>
+
+        <h2>Nachhilfe anbieten</h2>
+
+        <p class="modal-intro">
+            Erstelle später dein eigenes Lehrerprofil und finde
+            Schülerinnen und Schüler.
+        </p>
+
+        <form id="teacherForm">
+
+            <div class="form-group">
+                <label for="teacherName">
+                    Name
+                </label>
+
+                <input
+                    id="teacherName"
+                    type="text"
+                    required
+                    placeholder="Vorname Nachname"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="teacherEmail">
+                    E-Mail
+                </label>
+
+                <input
+                    id="teacherEmail"
+                    type="email"
+                    required
+                    placeholder="name@beispiel.ch"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="teacherSubjects">
+                    Hauptfach
+                </label>
+
+                <select id="teacherSubjects">
+                    <option>Deutsch</option>
+                    <option>Mathematik</option>
+                    <option>Italienisch</option>
+                    <option>Englisch</option>
+                    <option>Französisch</option>
+                </select>
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-full"
+            >
+                Interesse anmelden
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+            <div class="logo footer-logo">
+                <span class="logo-icon">T</span>
+                <span>Tutorly</span>
+            </div>
+
+            <p>
+                Nachhilfe finden. Gemeinsam lernen.
+            </p>
+        </div>
+
+        <div>
+            <strong>Plattform</strong>
+            <button data-page="search">Nachhilfe finden</button>
+            <button data-page="teachers">Lehrpersonen</button>
+        </div>
+
+        <div>
+            <strong>Informationen</strong>
+            <button data-page="about">Über uns</button>
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+        © 2026 Tutorly – Prototyp
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
